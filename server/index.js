@@ -10,17 +10,15 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
-// mongoose
-//   .connect(process.env.MONGO_URL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => {
-//     console.log("DB Connetion Successfull");
-//   })
-//   .catch((err) => {
-//     console.log(err.message);
-//   });
+ mongoose.connect(process.env.MONGO_URL, {
+ useNewUrlParser: true,
+ useUnifiedTopology: true,   })
+    .then(() => {
+    console.log("DB Connetion Successfull");
+   })
+  .catch((err) => {
+     console.log(err.message);
+   });
 
 // app.use("/api/auth", authRoutes);
 // app.use("/api/messages", messageRoutes);
